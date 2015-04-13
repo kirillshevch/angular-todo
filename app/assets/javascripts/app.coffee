@@ -1,1 +1,2 @@
-app = angular.module('todoApp', ['ngRoute', 'templates'])
+app = angular.module('todoApp', ['ngRoute', 'templates', 'Devise', 'ngCookies', 'ngResource'])
+

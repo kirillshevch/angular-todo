@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'haml-rails'
+gem 'devise', '~> 3.4'
+gem 'angular_rails_csrf'
 
 group :development, :test do
   gem 'byebug'

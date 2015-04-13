@@ -1,3 +1,6 @@
 asset 'angular'
 asset 'angular-route'
+asset 'angular-devise'
 asset 'bootstrap-sass-official'
+asset 'angular-resource'
+asset 'angular-cookies'

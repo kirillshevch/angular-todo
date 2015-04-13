@@ -1,1 +1,10 @@
 %h1 Hello
+%div
+  %nav
+  %ul.nav.nav-pills.pull-right{"ng-controller" => "SessionsCtrl as session"}
+    %li{:role => "presentation"}
+      %a{:href => "#/"} Home
+    %li{"ng-hide" => "user.id", :role => "presentation"}
+      %a{:href => "#/sign_in"} Sign In
+    %li{"ng-show" => "user.id", :role => "presentation"}
+      %a{:href => "", "ng-click" => "logout()"} Logout

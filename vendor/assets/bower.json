@@ -3,6 +3,9 @@
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
-    "bootstrap-sass-official": "latest"
+    "angular-devise": "latest",
+    "bootstrap-sass-official": "latest",
+    "angular-resource": "latest",
+    "angular-cookies": "latest"
   }
 }

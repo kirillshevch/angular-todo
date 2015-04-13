@@ -1,6 +1,14 @@
-%form{"ng-controller" => "registrationsCtrl", :role => "form"}
-  .form-group
-    %input{:name => "email", :type => "email", placeholder: "email"}
-  .form-group
-    %input{:name => "password", :type => "password", placeholer: "password"}
-  %button{:type => "submit"} Register
+%div{:style => "margin: 0px auto; width: 349px;"}
+  .todo-head{:style => "width: 349px;"}
+    .todo-list-name{:style => "text-align: center; margin: 0px auto;"}
+      %p Sign up
+  .todo-form{:style => "height: 142px; width: 349px;"}
+    %form.form-inline{:name => "myForm", "ng-submit" => "addUser()"}
+      .form-group
+        .input-group
+          %input.form-control{:name => "email", "ng-model" => "signupData.email", :placeholder => "Email", :type => "email"}
+          %input.form-control{:name => "password", "ng-model" => "signupData.password", :placeholder => "Password", :type => "password"}
+        %input.add-button.fix-submit{:name => "commit", :type => "submit", :value => "Sign up"}
+        .todo-list-sign
+          %p Have an Account?
+          %a{"ng-href" => "#/sign_in"} Sign in

@@ -1,3 +1,26 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-image: url('http://ipic.su/img/img7/fs/bg.1428915128.png');
+}
+
+.content-header {
+  margin: 50px auto;
+  width: 305px;
+  text-align: center;
+}
+
+.todo-head {
+  width: 617px;
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 9px 15px;
+
+  border: 1px solid #315589;
+  background: #426eae;
+}
+

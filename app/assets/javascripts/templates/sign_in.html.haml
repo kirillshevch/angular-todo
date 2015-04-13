@@ -1,0 +1,9 @@
+%h2 Sign In
+%form{"ng-controller" => "SessionsCtrl", "ng-submit" => "signIn()", :novalidate => ""}
+  .form-group
+    %label{:for => "inputEmail"} Email Address
+    %input#inputEmail.form-control{"ng-model" => "signinData.email", :placeholder => "Enter email", :type => "email"}/
+  .form-group
+    %label{:for => "inputPassword"} Password
+    %input#inputPassword.form-control{"ng-model" => "signinData.password", :placeholder => "Password", :type => "password"}/
+  %input.btn.btn-default{:type => "submit", :value => "Sign Up"}/
