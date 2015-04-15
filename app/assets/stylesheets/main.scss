@@ -22,5 +22,114 @@ body {
 
   border: 1px solid #315589;
   background: #426eae;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5587bf), to(#3863a0));
+  background: -webkit-linear-gradient(top, #5587bf, #3863a0);
+  background:    -moz-linear-gradient(top, #5587bf, #3863a0);
+  background:     -ms-linear-gradient(top, #5587bf, #3863a0);
+  background:      -o-linear-gradient(top, #5587bf, #3863a0);
+  box-shadow: 0 1px 0 #91aed5 inset;
 }
 
+.todo-list-name {
+  font-size: 16px;
+  color: #ffffff;
+  margin-left: 11px;
+  float: left;
+}
+
+.todo-list-name p {
+  margin: 0px;
+  margin: 0px auto;
+}
+
+.todo-form {
+  height: 47px;
+  padding: 6px 13px 7px 13px;
+
+  border: 1px solid rgba(0,0,0,.35);
+  border-top: 0 none;
+  border-bottom-color: #aaa;
+  background: #d7d7d7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e1e1e1), to(#ccc));
+  background: -webkit-linear-gradient(top, #e1e1e1, #ccc);
+  background:    -moz-linear-gradient(top, #e1e1e1, #ccc);
+  background:     -ms-linear-gradient(top, #e1e1e1, #ccc);
+  background:      -o-linear-gradient(top, #e1e1e1, #ccc);
+}
+
+.todo-list-sign {
+  display: inline;
+  float: right;
+  overflow: auto;
+}
+
+.todo-list-sign p {
+  color: #ffffff;
+  float: left;
+  margin-right: 10px;
+}
+
+.todo-list-sign a {
+  margin-right: 5px;
+}
+
+.sign-up-form {
+  margin: 0px auto;
+  width: 349px;
+}
+
+.sign-up-head {
+  width: 349px;
+}
+
+
+.sign-up-submit {
+  border-radius: 5px !important;
+  margin-top: -5px;
+}
+
+.sign-up-body {
+  height: 142px;
+  width: 349px;
+}
+
+.sign-with-fb {
+  margin-left: 15px;
+  width: 20px;
+}
+
+.sign-errors {
+  width: 349px;
+  margin: 0 auto;
+}
+
+.add-button {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+
+  float: left;
+
+  padding: 5px 19px 6px;
+
+  cursor: pointer;
+
+  color: #fff;
+  border: 1px solid #447557;
+  border-radius: 0 5px 5px 0;
+  background: #70a789;
+  background: -webkit-gradient(linear, left top, left bottom, from(#94cbae), to(#508767));
+  background: -webkit-linear-gradient(top, #94cbae, #508767);
+  background: -moz-linear-gradient(top, #94cbae, #508767);
+  background: -ms-linear-gradient(top, #94cbae, #508767);
+  background: -o-linear-gradient(top, #94cbae, #508767);
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+.add-button:hover {
+  opacity: .87;
+}
+
+.add-button:active {
+  background: #609779;
+}

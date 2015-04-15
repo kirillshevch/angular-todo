@@ -8,5 +8,6 @@ angular.module('todoApp').controller('RegistrationsCtrl', ['$scope', 'Auth', '$l
       Auth.register($scope.signupData).then ((registeredUser) ->
         $location.path('/')
       ), (error) ->
+        $scope.error = error
 ])
 

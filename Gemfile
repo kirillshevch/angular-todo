@@ -12,6 +12,7 @@ gem 'angular-rails-templates'
 gem 'haml-rails'
 gem 'devise', '~> 3.4'
 gem 'angular_rails_csrf'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'

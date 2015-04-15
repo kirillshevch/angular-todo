@@ -13,5 +13,6 @@ angular.module('todoApp').controller('SessionsCtrl', ['$scope', 'Auth', '$locati
       Auth.login($scope.signinData).then ((user) ->
         $location.path "/"
       ), (error) ->
+        $scope.error = error
 
 ])

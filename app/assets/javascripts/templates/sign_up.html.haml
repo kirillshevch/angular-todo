@@ -1,14 +1,26 @@
-%div{:style => "margin: 0px auto; width: 349px;"}
-  .todo-head{:style => "width: 349px;"}
-    .todo-list-name{:style => "text-align: center; margin: 0px auto;"}
+.sign-errors.alert.alert-danger{"ng-show" => "(signForm.email.$touched && signForm.email.$invalid) || (signForm.password.$invalid && signForm.password.$touched)"}
+  %ul
+    %li{"ng-show" => "signForm.email.$invalid && signForm.email.$touched"}
+      Invalid email
+    %li{"ng-show" => "signForm.password.$invalid && signForm.password.$touched"}
+      Invalid password(at least 8 characters)
+.sign-errors.alert.alert-danger{"ng-show" => "error"}
+  %ul
+    %li
+      Email has already been taken
+.sign-up-form
+  .todo-head.sign-up-head
+    .todo-list-name
       %p Sign up
-  .todo-form{:style => "height: 142px; width: 349px;"}
-    %form.form-inline{:name => "myForm", "ng-submit" => "addUser()"}
+  .todo-form.sign-up-body
+    %form{:name => "signForm", "ng-submit" => "signForm.$valid && addUser()"}
+      .form-group{"ng-class" => "{ 'has-error': signForm.email.$invalid && signForm.email.$touched, 'has-success': signForm.email.$valid }"}
+        %input.todo-input.form-control{:name => "email", "ng-model" => "signupData.email", "validate-email" => "", :placeholder => "Email", :type => "email", :required => true}
+      .form-group{"ng-class" => "{ 'has-error': signForm.password.$invalid && signForm.password.$touched, 'has-success': signForm.password.$valid }"}
+        %input.todo-input.form-control{:name => "password", "ng-model" => "signupData.password", "ng-minlength" => 8, "ng-pattern" => "/^[a-zA-Z0-9]+/", :placeholder => "Password", :type => "password", :required => true}
       .form-group
-        .input-group
-          %input.form-control{:name => "email", "ng-model" => "signupData.email", :placeholder => "Email", :type => "email"}
-          %input.form-control{:name => "password", "ng-model" => "signupData.password", :placeholder => "Password", :type => "password"}
-        %input.add-button.fix-submit{:name => "commit", :type => "submit", :value => "Sign up"}
+        %input.add-button.sign-up-submit{:name => "commit", :type => "submit", :value => "Sign up"}
+        = link_to image_tag("http://ipic.su/img/img7/fs/facebookicon.1427689582.png", class: "sign-with-fb"), user_omniauth_authorize_path(:facebook)
         .todo-list-sign
           %p Have an Account?
           %a{"ng-href" => "#/sign_in"} Sign in
