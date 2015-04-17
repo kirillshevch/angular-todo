@@ -11,6 +11,7 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'haml-rails'
 gem 'devise', '~> 3.4'
+gem 'cancancan', '~> 1.10'
 gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
 

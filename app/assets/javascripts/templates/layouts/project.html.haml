@@ -1,0 +1,11 @@
+.todo-list
+  .todo-head
+    .icon-left
+      %span.glyphicon.glyphicon-calendar
+    .todo-list-name
+      %p {{ project.name }}
+    .icon-right
+      %a.glyphicon.glyphicon-edit
+      .horisont
+        |
+      %a.glyphicon.glyphicon-trash{"ng-click" => "deleteProject(project.id)"}

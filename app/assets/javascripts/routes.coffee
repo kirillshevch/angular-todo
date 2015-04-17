@@ -1,7 +1,8 @@
 angular.module('todoApp').config ($routeProvider) ->
   $routeProvider
   .when('/',
-    templateUrl: 'index.html'
+    templateUrl: 'index.html',
+    controller: 'TodoCtrl'
   )
   .when('/sign_up',
     templateUrl: 'sign_up.html',
