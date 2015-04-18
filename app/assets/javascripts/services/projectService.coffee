@@ -7,3 +7,5 @@ angular.module('todoApp').factory 'Project', ($resource) ->
       isArray: true
     destroy:
       method: "DELETE"
+    update:
+      method: "PATCH"

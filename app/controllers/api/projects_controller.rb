@@ -11,9 +11,21 @@ class Api::ProjectsController < ApplicationController
     end
   end
 
+  def update
+    if @project.update(project_params)
+      render json: @project
+    end
+  end
+
   def destroy
     if @project.destroy
       render json: @project
     end
   end
+
+  private
+
+    def project_params
+      params.permit(:id, :name)
+    end
 end

@@ -8,6 +8,6 @@ class Project < ActiveRecord::Base
   private
 
     def default_name
-      self.name ||= "New project"
+      self.name ||= "New list"
     end
 end
