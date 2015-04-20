@@ -1,0 +1,16 @@
+.task-check
+  %input{"ng-model" => "task.completed", "type" => "checkbox", "ng-click"=> "taskCompleted(list, task)"}
+.task-text
+  %p{"ng-hide" => "task.edit"} {{ task.name }}
+  %form{"ng-show" => "task.edit"}
+    %div{:style => "margin:0;padding:0;display:inline"}
+      %input.form-edit.form-edit-task{:type => "text", "ng-model" => "task.newName"}
+      %button.glyphicon.glyphicon-ok.button-ok{"ng-click" => "updateTask(list, task)"}
+      %button.glyphicon.glyphicon-time.button-ok{"ui-date" => ""}
+      %input{"ng-model" => "task.due_date", "ui-date" => "", "ui-date-format" => "DD, d MM, yy", "ng-change" => "taskDate(list, task)"}
+  %p{"ng-show" => "task.due_date"} Due date: {{task.due_date}}
+.task-change
+  %a.glyphicon.glyphicon-edit{"ng-click" => "editTask(task)"}
+  .horisont
+    |
+  %a.glyphicon.glyphicon-trash{"ng-click" => "deleteTask(list, task)"}

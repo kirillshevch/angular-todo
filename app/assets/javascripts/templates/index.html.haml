@@ -1,8 +1,8 @@
-.projects{"ng-repeat" => "project in projects", "ng-include" => '"layouts/project.html"'}
+.lists{"ng-repeat" => "list in lists", "ng-include" => '"layouts/list.html"'}
 
 .todo-list
   .button_to
     %div
-      %button.add-todo-list{:type => "submit", "ng-click" => "addProject()"}
+      %button.add-todo-list{:type => "submit", "ng-click" => "addList()"}
         %span.glyphicon.glyphicon-plus
         %p Add TODO List

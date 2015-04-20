@@ -6,6 +6,8 @@
     "angular-devise": "latest",
     "bootstrap-sass-official": "latest",
     "angular-resource": "latest",
-    "angular-cookies": "latest"
+    "angular-cookies": "latest",
+    "angular-ui-date": "latest",
+    "normalize.css": "latest"
   }
 }

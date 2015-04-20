@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     if user
-      can :manage, Project, user_id: user.id
+      can :manage, List, user_id: user.id
     else
       can :read, :all
     end

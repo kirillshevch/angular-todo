@@ -1,35 +1,35 @@
-angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope', 'Project',
-  (Auth, $location, $scope, Project)->
+angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope', 'List',
+  (Auth, $location, $scope, List)->
     if (Auth._currentUser == null)
       $location.path('/sign_up')
 
-    $scope.loadProjects = Project.index '',
+    $scope.loadLists = List.index '',
       (response)->
-        $scope.projects = response
+        $scope.lists = response
 
-    $scope.addProject = ()->
-      Project.create '',
+    $scope.addList = ()->
+      List.create '',
         (response)->
-          $scope.projects.unshift(response)
+          $scope.lists.unshift(response)
 
-    $scope.deleteProject = (project)->
-      Project.delete
-        id: project.id
+    $scope.deleteList = (list)->
+      List.delete
+        id: list.id
           , ()->
-            $scope.projects.splice($scope.projects.indexOf(project), 1)
+            $scope.lists.splice($scope.lists.indexOf(list), 1)
 
-    $scope.editProject = (project)->
-      if project.edit
-        project.edit = false
+    $scope.editList = (list)->
+      if list.edit
+        list.edit = false
       else
-        project.edit = true
-        project.nameFeature = project.name
+        list.edit = true
+        list.nameFeature = list.name
 
-    $scope.updateProject = (project)->
-      Project.update
-        id: project.id, name: project.nameFeature
+    $scope.updateList = (list)->
+      List.update
+        id: list.id, name: list.nameFeature
           , ()->
-            project.name = project.nameFeature
-            project.edit = false
+            list.name = list.nameFeature
+            list.edit = false
 
 ])

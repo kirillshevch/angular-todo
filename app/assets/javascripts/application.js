@@ -18,5 +18,7 @@
 //= require angular-rails-templates
 //= require angular-cookies/angular-cookies
 //= require angular-resource/angular-resource
+//= require angular-ui-date/src/date
+//= require jquery-ui/jquery-ui
 //= require_tree .
 //= require_tree ./templates
