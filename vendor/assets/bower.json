@@ -7,7 +7,7 @@
     "bootstrap-sass-official": "latest",
     "angular-resource": "latest",
     "angular-cookies": "latest",
-    "angular-ui-date": "latest",
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "angular-ui-date": "latest"
   }
 }

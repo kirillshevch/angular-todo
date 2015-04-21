@@ -3,11 +3,7 @@ angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope',
     if (Auth._currentUser == null)
       $location.path('/sign_up')
 
-    $scope.loadLists = List.index '',
-      (response)->
-        $scope.lists = response
-
-    $scope.addList = ()->
+    $scope.addList = ->
       List.create '',
         (response)->
           $scope.lists.unshift(response)

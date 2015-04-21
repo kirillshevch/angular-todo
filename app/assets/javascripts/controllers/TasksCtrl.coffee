@@ -17,11 +17,7 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
 
     $scope.editTask = (task)->
       task.newName = task.name
-      if task.edit
-        task.edit = false
-      else
-        task.edit = true
-
+      task.edit = !task.edit
 
     $scope.updateTask = (list, task)->
       Task.update
@@ -40,5 +36,9 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
       Task.update
         list_id: list.id, id: task.id, due_date: task.due_date
           , ()->
-            console.log('ok')
+            task.edit = false
+
+    $scope.dateOptions =
+      showOn: 'button',
+      buttonText: ''
 ]

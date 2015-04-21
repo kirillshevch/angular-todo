@@ -6,4 +6,15 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = yield
+    %header
+      %div
+        %nav
+          %ul.nav.nav-pills.pull-right
+            %li
+              %a Sign out
+      .content-header
+        %h2
+          %b SIMPLE TODO LISTS
+        %h4 FROM RUBY GARAGE
+    .container
+      %div{"ng-app" => "todoApp", "ng-view" => "", "ng-controller" => "MainCtrl"}

@@ -336,3 +336,29 @@ li:hover {
 .form-edit-task {
   width: 350px;
 }
+
+.ui-datepicker{
+  z-index: 9999 !important;
+}
+
+.hasDatepicker {
+  display: none !important;
+}
+
+.ui-datepicker-trigger {
+  @extend .button-ok;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ui-datepicker-trigger:before {
+  content: "\e023";
+}
