@@ -4,8 +4,12 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
       Task.create
         list_id: list.id, name: list.newTaskName
           , (response)->
-              $scope.list.tasks.unshift(response)
-              $scope.list.newTaskName = ''
+              if $scope.list.tasks == undefined
+                $scope.list.tasks = new Array(response)
+                $scope.list.newTaskName = ''
+              else
+                $scope.list.tasks.unshift(response)
+                $scope.list.newTaskName = ''
 
 
     $scope.deleteTask = (list, task)->
@@ -41,4 +45,8 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
     $scope.dateOptions =
       showOn: 'button',
       buttonText: ''
+    $scope.todoSortable =
+      containment: 'parent',
+      cursor: 'move',
+      tolerance: 'pointer'
 ]

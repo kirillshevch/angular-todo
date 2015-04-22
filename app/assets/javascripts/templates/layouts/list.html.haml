@@ -26,5 +26,6 @@
           %input.form-control{:placeholder => "Start typing here to create a task...", :type => "text", "ng-model" => "list.newTaskName"}
           .input-group-addon
             %input.add-button{:type => "submit", :value => "Add Task", "ng-click" => "addTask(list)"}
-  %ul.todo-content{"ng-controller" => "TasksCtrl"}
-    %li{"ng-repeat" => "task in list.tasks", "ng-include" => '"layouts/task.html"', "ng-class" => "{licheck: task.completed}"}
+  %div{"ng-controller" => "TasksCtrl"}
+    %ul.todo-content{"ui-sortable" => "todoSortable", "ng-model" => "list.tasks"}
+      %li{"ng-repeat" => "task in list.tasks", "ng-include" => '"layouts/task.html"', "ng-class" => "{licheck: task.completed}"}
