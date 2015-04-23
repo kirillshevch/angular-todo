@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_list (0.6.0)
+      activerecord (>= 3.0)
     angular-rails-templates (0.1.4)
       railties (>= 3.1)
       sprockets
@@ -247,6 +249,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   angular-rails-templates
   angular_rails_csrf
   bower-rails

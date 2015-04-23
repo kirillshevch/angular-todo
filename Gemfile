@@ -14,6 +14,7 @@ gem 'devise', '~> 3.4'
 gem 'cancancan', '~> 1.10'
 gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
+gem 'acts_as_list'
 
 group :development, :test do
   gem 'byebug'

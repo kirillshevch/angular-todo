@@ -26,7 +26,7 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
     $scope.updateTask = (list, task)->
       Task.update
         list_id: list.id, id: task.id, name: task.newName
-          , ()->
+          , ->
             task.name = task.newName
             task.edit = false
 
@@ -34,19 +34,33 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
     $scope.taskCompleted = (list, task)->
       Task.update
         list_id: list.id, id: task.id, completed: task.completed
-          , ()->
+          , ->
 
     $scope.taskDate = (list, task)->
       Task.update
         list_id: list.id, id: task.id, due_date: task.due_date
-          , ()->
+          , ->
             task.edit = false
 
     $scope.dateOptions =
       showOn: 'button',
       buttonText: ''
+
     $scope.todoSortable =
       containment: 'parent',
       cursor: 'move',
-      tolerance: 'pointer'
+      tolerance: 'pointer',
+      stop:  (e, ui) ->
+        # todo разобраться как работает
+        domIndexOf = (e) -> e.siblings().andSelf().index(e)
+        newPriority = domIndexOf(ui.item) + 1
+        task = ui.item.scope().task
+        task.priority = newPriority
+        Task.update
+          list_id: task.list_id, id: task.id, task_priority: task.priority
+            , ->
+
+
+
+
 ]

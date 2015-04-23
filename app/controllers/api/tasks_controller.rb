@@ -1,5 +1,5 @@
 class Api::TasksController < ApplicationController
-  load_resource :list
+  load_and_authorize_resource :list
   load_resource :task, through: :list
   # TODO авторайзы!
 
@@ -11,7 +11,8 @@ class Api::TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      render nothing: true
+      #render nothing: true
+      render json: @task
     end
   end
 
@@ -24,6 +25,6 @@ class Api::TasksController < ApplicationController
   private
 
     def task_params
-      params.permit(:name, :completed, :due_date)
+      params.permit(:name, :completed, :due_date, :task_priority)
     end
 end
