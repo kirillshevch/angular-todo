@@ -1,18 +1,19 @@
 class Api::TasksController < ApplicationController
-  load_and_authorize_resource :list
-  load_resource :task, through: :list
-  # TODO авторайзы!
+  load_and_authorize_resource except: [:create]
+  # todo обработка ошибок
 
   def create
-    if @task.save(task_params)
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.build(task_params)
+    authorize! :create, @task
+    if @task.save
       render json: @task
     end
   end
 
   def update
     if @task.update(task_params)
-      #render nothing: true
-      render json: @task
+      render nothing: true
     end
   end
 

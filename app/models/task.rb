@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :list
+  has_many :comments, dependent: :delete_all
 
   default_scope -> { order('position ASC') }
 

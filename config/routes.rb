@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   }
 
   namespace :api, defaults: { format: :json } do
-    resources :lists do
-      resources :tasks
+    resources :lists, except: [:show, :edit, :new] do
+      resources :tasks, only: [:create, :update, :destroy] do
+        resources :comments, only: [:create, :destroy]
+      end
     end
   end
 

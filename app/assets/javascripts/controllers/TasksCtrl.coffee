@@ -60,7 +60,6 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
           list_id: task.list_id, id: task.id, task_priority: task.priority
             , ->
 
-
-
-
+    $scope.commentsShow = (task)->
+      task.comments.show = !task.comments.show
 ]

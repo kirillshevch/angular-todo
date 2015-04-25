@@ -1,5 +1,6 @@
 angular.module('todoApp').factory 'Task', ($resource)->
-  $resource 'api/lists/:list_id/tasks/:id', { list_id: '@list_id', id: '@id' },
+  $resource 'api/lists/:list_id/tasks/:id',
+    { list_id: '@list_id', id: '@id' },
     create:
       method: 'POST'
     destroy:

@@ -11,7 +11,7 @@ angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope',
     $scope.deleteList = (list)->
       List.delete
         id: list.id
-          , ()->
+          , ->
             $scope.lists.splice($scope.lists.indexOf(list), 1)
 
     $scope.editList = (list)->
@@ -24,7 +24,7 @@ angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope',
     $scope.updateList = (list)->
       List.update
         id: list.id, name: list.nameFeature
-          , ()->
+          , ->
             list.name = list.nameFeature
             list.edit = false
 
