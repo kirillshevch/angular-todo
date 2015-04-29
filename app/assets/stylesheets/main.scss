@@ -15,13 +15,13 @@ textarea {
   outline:none;
 }
 
-li {
+.li-task {
   cursor: pointer;
   overflow: auto;
   border-bottom: 1px solid #e7ebea;
   background: #ffffff;
 }
-li:hover {
+.li-task:hover {
   background: #fcfed5;
 }
 
@@ -314,6 +314,7 @@ li:hover {
   text-decoration: none;
 }
 .task-change a:hover {
+  text-decoration: none !important;
   color: #757577;
   -webkit-transition:       all 0.3s ease 0s;
   -moz-transition:         all 0.3s ease 0s;
@@ -402,4 +403,16 @@ li:hover {
   font-size: 12px;
   margin-right: 7px;
   margin-top: 3px;
+}
+
+.delete-comment:hover {
+  text-decoration: none;
+}
+
+.files {
+  margin-left: 25px;
+}
+
+.file {
+  margin-left: 25px;
 }

@@ -1,5 +1,5 @@
-angular.module('todoApp').controller('SessionsCtrl', ['$scope', 'Auth', '$location', 'List',
-  ($scope, Auth, $location, List) ->
+angular.module('todoApp').controller('SessionsCtrl', ['$scope', 'Auth', '$location', 'List', '$rootScope',
+  ($scope, Auth, $location, List, $rootScope) ->
     if Auth._currentUser
       $location.path('/')
 
@@ -13,7 +13,7 @@ angular.module('todoApp').controller('SessionsCtrl', ['$scope', 'Auth', '$locati
       Auth.login($scope.signinData).then ((user) ->
         List.index '',
           (response)->
-            alert(response)
+            $rootScope.lists = response
         $location.path "/"
       ), (error) ->
         $scope.error = error

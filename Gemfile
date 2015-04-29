@@ -15,6 +15,8 @@ gem 'cancancan', '~> 1.10'
 gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
 gem 'acts_as_list'
+gem 'carrierwave'
+gem 'angularjs-file-upload-rails', '~> 1.1.6'
 
 group :development, :test do
   gem 'byebug'

@@ -51,7 +51,6 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
       cursor: 'move',
       tolerance: 'pointer',
       stop:  (e, ui) ->
-        # todo разобраться как работает
         domIndexOf = (e) -> e.siblings().andSelf().index(e)
         newPriority = domIndexOf(ui.item) + 1
         task = ui.item.scope().task

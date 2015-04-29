@@ -9,6 +9,7 @@
     "angular-cookies": "latest",
     "normalize.css": "latest",
     "angular-ui-date": "latest",
-    "angular-ui-sortable": "latest"
+    "angular-ui-sortable": "latest",
+    "angular-file-upload": "latest"
   }
 }

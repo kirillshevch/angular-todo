@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  load_and_authorize_resource only: [:destroy]
+  load_resource only: [:destroy, :update]
 
   def create
     @list = List.find(params[:list_id])
@@ -18,9 +18,15 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def update
+    if @comment.update(comment_params)
+      render nothing: true
+    end
+  end
+
   private
 
     def comment_params
-      params.permit(:name)
+      params.permit(:name, :files)
     end
 end

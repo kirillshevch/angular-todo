@@ -28,4 +28,4 @@
             %input.add-button{:type => "submit", :value => "Add Task", "ng-click" => "addTask(list)"}
   %div{"ng-controller" => "TasksCtrl"}
     %ul.todo-content{"ui-sortable" => "todoSortable", "ng-model" => "list.tasks"}
-      %li{"ng-repeat" => "task in list.tasks", "ng-include" => '"layouts/task.html"', "ng-class" => "{licheck: task.completed}"}
+      %li{"ng-repeat" => "task in list.tasks", "ng-include" => '"layouts/task.html"', "ng-class" => "{licheck: task.completed}", "class" =>  "li-task"}

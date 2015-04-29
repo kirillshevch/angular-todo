@@ -11,6 +11,10 @@ json.array! @lists do |list|
     json.comments task.comments do |comment|
       json.id comment.id
       json.name comment.name
+      json.file_stores comment.file_stores do |file|
+        json.file file.file
+        json.file_name file.file_name
+      end
     end
   end
 end

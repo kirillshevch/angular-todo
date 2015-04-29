@@ -21,5 +21,6 @@
 //= require angular-resource/angular-resource
 //= require angular-ui-date/src/date
 //= require angular-ui-sortable/sortable
+//= require angularjs-file-upload
 //= require_tree .
 //= require_tree ./templates

@@ -44,6 +44,7 @@ GEM
       tilt
     angular_rails_csrf (1.0.3)
       rails (>= 3, < 5)
+    angularjs-file-upload-rails (1.1.6)
     arel (6.0.0)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -59,6 +60,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.1.0)
@@ -252,10 +258,12 @@ DEPENDENCIES
   acts_as_list
   angular-rails-templates
   angular_rails_csrf
+  angularjs-file-upload-rails (~> 1.1.6)
   bower-rails
   byebug
   cancancan (~> 1.10)
   capybara
+  carrierwave
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise (~> 3.4)
