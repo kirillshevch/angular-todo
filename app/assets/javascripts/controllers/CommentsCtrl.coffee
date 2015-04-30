@@ -13,12 +13,12 @@ angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'File
           , ->
             $scope.task.comments.splice($scope.task.comments.indexOf(comment), 1)
 
-    csrf_token = document.querySelector("meta[name=\"csrf-token\"]").getAttribute("content")
+    #csrf_token = document.querySelector("meta[name=\"csrf-token\"]").getAttribute("content")
 
     $scope.uploader = new FileUploader(
       url: 'file_stores'
-      headers:
-        "X-CSRF-TOKEN": csrf_token
+      #headers:
+        #'X-CSRF-TOKEN': csrf_token
     )
 
     $scope.uploader.onBeforeUploadItem = (item) ->
@@ -29,8 +29,10 @@ angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'File
       $scope.task.comments.forEach (item)->
         if item.id == response.comment_id
           comment = item
-          comment.file_stores.push(response)
-
+          if comment.file_stores == undefined
+            comment.file_stores = new Array(response)
+          else
+            comment.file_stores.push(response)
 
     $scope.fileSelectShow = (task, comment)->
       id = comment.id

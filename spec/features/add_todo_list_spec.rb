@@ -9,7 +9,7 @@ feature 'Add todo list', js: true do
     visit root_path
   end
 
-  scenario 'An user creates new todo list successfully' do
+  scenario 'User creates new todo list successfully' do
     find('.add-todo-list').click
     expect(page).to have_content('New list')
   end

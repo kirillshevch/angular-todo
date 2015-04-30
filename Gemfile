@@ -24,6 +24,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.2'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'selenium-webdriver'

@@ -14,6 +14,8 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
   config.include Rails.application.routes.url_helpers
+  #Capybara.javascript_driver = :webkit
+  #Capybara.default_wait_time = 20
 
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :list do
-    name "MyString"
-user_id 1
+    name "New list"
+    user_id 1
   end
 
 end

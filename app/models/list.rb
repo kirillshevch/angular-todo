@@ -6,6 +6,8 @@ class List < ActiveRecord::Base
 
   default_scope -> { order('id DESC') }
 
+  #validates :name, presence: true
+
   private
 
     def default_name

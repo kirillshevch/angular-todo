@@ -5,16 +5,15 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
+  %body{"ng-app" => "todoApp", "ng-controller" => "MainCtrl"}
     %header
-      %div
-        %nav
-          %ul.nav.nav-pills.pull-right
-            %li
-              %a Sign out
       .content-header
         %h2
           %b SIMPLE TODO LISTS
         %h4 FROM RUBY GARAGE
+      %div{"ng-controller" => "SessionsCtrl", "class" => "sign-out", "ng-show" => "user"}
+        %button{"ng-click" => "logout()", "class" => "btn btn-primary"} Sign out
     .container
-      %div{"ng-app" => "todoApp", "ng-view" => "", "ng-controller" => "MainCtrl"}
+      %div{"ng-view" => ""}
+    %footer
+      %p &copy; Ruby Garage

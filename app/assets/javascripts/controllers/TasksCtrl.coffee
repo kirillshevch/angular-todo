@@ -60,5 +60,9 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
             , ->
 
     $scope.commentsShow = (task)->
-      task.comments.show = !task.comments.show
+      if task.comments == undefined
+        task.comments = new Array()
+        task.comments.show = true
+      else
+        task.comments.show = !task.comments.show
 ]
