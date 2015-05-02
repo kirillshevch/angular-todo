@@ -1,0 +1,15 @@
+%div
+  {{ comment.name }}
+  %a.glyphicon.glyphicon-trash.delete-comment{"ng-click" => "deleteComment(task, comment)"}
+  %a.glyphicon.glyphicon-paperclip.delete-comment{"ng-click" => "fileSelectShow(task, comment)"}
+  %input{"nv-file-select" => "", :type => "file", :uploader => "uploader", "options" => "{ formData: [{id: comment.id}] }", "ng-show" => "comment.fileSelect"}
+  %ul{"ng-show" => "comment.fileSelect"}
+    %li{"ng-repeat" => "item in uploader.queue"}
+      Name:
+      %span{"ng-bind" => "item.file.name"}
+      %br/
+      %button{"ng-click" => "item.upload()"} upload
+  .files
+    %p{"ng-show" => "comment.file_stores[0]"} Attached files:
+    .file{"ng-repeat" => "file in comment.file_stores"}
+      %a{"target" => "_blank", "href" => "{{ file.file.file.url }}" } {{ file.file_name }}

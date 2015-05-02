@@ -1,0 +1,427 @@
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-image: url('http://ipic.su/img/img7/fs/bg.1428915128.png');
+}
+
+p {
+  margin: 0 !important;
+}
+
+input,
+textarea {
+  outline:none;
+}
+
+.li-task {
+  cursor: pointer;
+  overflow: auto;
+  border-bottom: 1px solid #e7ebea;
+  background: #ffffff;
+}
+.li-task:hover {
+  background: #fcfed5;
+}
+
+.container {
+  width: 647px !important;
+}
+
+.content-header {
+  margin: 50px auto;
+  width: 305px;
+  text-align: center;
+}
+.todo-head {
+  width: 617px;
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 9px 15px;
+
+  border: 1px solid #315589;
+  background: #426eae;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5587bf), to(#3863a0));
+  background: -webkit-linear-gradient(top, #5587bf, #3863a0);
+  background:    -moz-linear-gradient(top, #5587bf, #3863a0);
+  background:     -ms-linear-gradient(top, #5587bf, #3863a0);
+  background:      -o-linear-gradient(top, #5587bf, #3863a0);
+  box-shadow: 0 1px 0 #91aed5 inset;
+}
+
+.todo-list-name {
+  font-size: 16px;
+  color: #ffffff;
+  margin-left: 11px;
+  float: left;
+  max-width: 490px;
+  word-wrap: break-word;
+}
+
+.todo-list-name p {
+  margin: 0px;
+  margin: 0px auto;
+}
+
+.todo-form {
+  height: 47px;
+  padding: 6px 13px 7px 13px;
+
+  border: 1px solid rgba(0,0,0,.35);
+  border-top: 0 none;
+  border-bottom-color: #aaa;
+  background: #d7d7d7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e1e1e1), to(#ccc));
+  background: -webkit-linear-gradient(top, #e1e1e1, #ccc);
+  background:    -moz-linear-gradient(top, #e1e1e1, #ccc);
+  background:     -ms-linear-gradient(top, #e1e1e1, #ccc);
+  background:      -o-linear-gradient(top, #e1e1e1, #ccc);
+}
+
+.todo-list {
+  margin-bottom: 40px;
+  width: 617px;
+}
+
+.todo-list-sign {
+  display: inline;
+  float: right;
+  overflow: auto;
+}
+
+.todo-list-sign p {
+  color: #ffffff;
+  float: left;
+  padding-right: 5px;
+}
+
+.todo-list-sign a {
+  margin-right: 5px;
+}
+
+.todo-content:last-child {
+  border-radius: 0 0 16px 16px;
+}
+
+.todo-content {
+  background: #ffffff;
+  border-left: 1px solid rgba(0,0,0,.35);
+  border-right: 1px solid rgba(0,0,0,.35);
+  border-bottom: 1px solid rgba(0,0,0,0.35);
+  list-style: none;
+  color: #999999;
+  padding: 0;
+  overflow: auto;
+}
+
+.todo-content li:hover {
+  -webkit-transition:       all 0.4s ease 0s;
+  -moz-transition:         all 0.4s ease 0s;
+  -o-transition:         all 0.4s ease 0s;
+  transition:         all 0.4s ease 0s;
+  .task-change {
+    visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+  }
+}
+
+.icon-left {
+  float: left;
+  font-size: 18px;
+  max-width: 29px;
+}
+
+.icon-right {
+  color: #90a8ca;
+  cursor: pointer;
+  float: right;
+  margin-top: 1px;
+}
+
+.icon-right a {
+  color: #90a8ca;
+  text-decoration: none !important;
+}
+
+.icon-right div {
+  display: inline;
+}
+
+.icon-right a:hover {
+  color: #fff;
+  -webkit-transition:       all 0.3s ease 0s;
+  -moz-transition:         all 0.3s ease 0s;
+  -o-transition:         all 0.3s ease 0s;
+  transition:         all 0.3s ease 0s;
+}
+
+.horisont {
+  font-size: 16px;
+}
+.add-button {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+
+  float: left;
+
+  padding: 5px 19px 6px;
+
+  cursor: pointer;
+
+  color: #fff;
+  border: 1px solid #447557;
+  border-radius: 0 5px 5px 0;
+  background: #70a789;
+  background: -webkit-gradient(linear, left top, left bottom, from(#94cbae), to(#508767));
+  background: -webkit-linear-gradient(top, #94cbae, #508767);
+  background: -moz-linear-gradient(top, #94cbae, #508767);
+  background: -ms-linear-gradient(top, #94cbae, #508767);
+  background: -o-linear-gradient(top, #94cbae, #508767);
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+.add-button:hover {
+  opacity: .87;
+}
+
+.add-button:active {
+  background: #609779;
+}
+
+.add-todo-list {
+  font-size: 17px;
+  font-weight: 400;
+
+  display: block;
+
+  width: 180px;
+  margin: 0 auto 40px;
+  padding: 8px 0 8px 0px;
+
+  cursor: pointer;
+
+  color: #fff;
+  border: 1px solid #315589;
+  border-radius: 3px;
+  background: #426eae;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5587bf), to(#3863a0));
+  background: -webkit-linear-gradient(top, #5587bf, #3863a0);
+  background:    -moz-linear-gradient(top, #5587bf, #3863a0);
+  background:     -ms-linear-gradient(top, #5587bf, #3863a0);
+  background:      -o-linear-gradient(top, #5587bf, #3863a0);
+  box-shadow: 0 1px 0 #91aed5 inset;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.add-todo-list:active {
+  background: #3863a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,.2) inset, 0 -1px 0 #426eae inset;
+}
+
+.add-todo-list span {
+  color: #31496c;
+  float: left;
+  font-size: 19px;
+  margin-left: 14px;
+  margin-right: 8px;
+  margin-top: 0;
+}
+
+.add-todo-list p {
+  float: left;
+}
+
+.form-edit {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #72a4dc;
+  width: 482px;
+  margin-bottom: -1px;
+}
+
+.form-edit:active {
+  border: none !important;
+}
+
+.button-ok {
+  border: none;
+  background: none;
+  margin-left: 10px;
+}
+.button-remove {
+  border: none;
+  background: none;
+  padding-right: 0;
+}
+
+.icon-plus {
+  padding-right: 7px;
+  margin-top: 2px;
+  font-size: 21px;
+  color: #5a9074;
+}
+.input-group-addon {
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+.form-inline .form-group {
+  display: block !important;
+}
+
+.form-control {
+  border-bottom-left-radius: 0 !important;
+  border-top: 1px solid !important;
+  border-top-left-radius: 0 !important;
+  height: 32px !important;
+  margin-top: 1px;
+}
+
+.task-check {
+  float: left;
+  padding: 11px 8px 0 15px;
+}
+.task-text {
+  padding: 13px;
+  font-weight: bold;
+  font-size: 13px;
+  float: left;
+  margin-left: 3px;
+  border-right: 1px solid #e7ebea;
+  width: 461px;
+  word-wrap: break-word;
+  background: url('http://ipic.su/img/img7/fs/line.1429497615.png') repeat-y scroll 0 0 rgba(0, 0, 0, 0);
+}
+.task-change {
+  float: right;
+  padding: 10px 12px 11px 9px;
+  margin-right: 11px;
+  font-size: 12px;
+  color: #adadad;
+  visibility: hidden;
+  opacity:0;
+  transition: visibility 0s linear 0.15s,opacity 0.15s linear;
+  -webkit-transition: visibility 0s linear 0.15s,opacity 0.15s linear;
+  -moz-transition: visibility 0s linear 0.15s,opacity 0.15s linear;
+  -o-transition: visibility 0s linear 0.15s,opacity 0.15s linear;
+
+}
+.task-change a {
+  margin-right: 2px;
+  color: #adadad;
+  text-decoration: none;
+}
+.task-change a:hover {
+  text-decoration: none !important;
+  color: #757577;
+  -webkit-transition:       all 0.3s ease 0s;
+  -moz-transition:         all 0.3s ease 0s;
+  -o-transition:         all 0.3s ease 0s;
+  transition:         all 0.3s ease 0s;
+}
+.task-change div {
+  display: inline;
+  margin-right: 2px;
+}
+
+.licheck {
+  background: none repeat scroll 0 0 #ecf3fa;
+}
+
+.licheck p {
+  text-decoration: line-through;
+}
+
+.form-edit-task {
+  width: 350px;
+}
+
+.ui-datepicker{
+  z-index: 9999 !important;
+}
+
+.hasDatepicker {
+  display: none !important;
+}
+
+.ui-datepicker-trigger {
+  @extend .button-ok;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ui-datepicker-trigger:before {
+  content: "\e023";
+}
+
+.comments {
+  border-top: 1px solid #e7ebea;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.comment-add {
+  float: right;
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+.comment-add:hover {
+  text-decoration: none;
+}
+
+.comment-input {
+  float: right;
+  font-size: 12px;
+  font-weight: 100;
+  margin-right: 10px;
+  margin-top: 2px;
+  width: 405px;
+}
+
+.comments-list {
+  float: left;
+  margin-left: 6px;
+  margin-top: 5px;
+  overflow: auto;
+  width: 100%;
+}
+
+.delete-comment {
+  color: #adadad;
+  float: right;
+  font-size: 12px;
+  margin-right: 7px;
+  margin-top: 3px;
+}
+
+.delete-comment:hover {
+  text-decoration: none;
+}
+
+.files {
+  margin-left: 25px;
+}
+
+.file {
+  margin-left: 25px;
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto;
+  width: 617px;
+}

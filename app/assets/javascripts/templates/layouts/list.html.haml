@@ -1,0 +1,31 @@
+.todo-list
+  .todo-head
+    .icon-left
+      %span.glyphicon.glyphicon-calendar
+    .todo-list-name
+      %p{"ng-hide" => "list.edit"} {{ list.name }}
+      %form{"ng-show" => "list.edit", "ng-submit" => "updateList(list)"}
+        %div
+          %input.form-edit{:name => "name", :type => "text", "ng-model" => "list.nameFeature", :required => true}
+    .icon-right{"ng-show" => "list.edit"}
+      %a.glyphicon.glyphicon-ok{"ng-click" => "updateList(list)"}
+      .horisont
+        |
+      %a.glyphicon.glyphicon-remove{"ng-click" => "editList(list)"}
+    .icon-right{"ng-hide" => "list.edit"}
+      %a.glyphicon.glyphicon-edit{"ng-click" => "editList(list)"}
+      .horisont
+        |
+      %a.glyphicon.glyphicon-trash{"ng-click" => "deleteList(list)"}
+  .todo-form{"ng-controller" => "TasksCtrl"}
+    .icon-left.icon-plus
+      %span.glyphicon.glyphicon-plus
+    %form
+      .form-group
+        .input-group
+          %input.form-control{:placeholder => "Start typing here to create a task...", :type => "text", "ng-model" => "list.newTaskName", :required => true}
+          .input-group-addon
+            %input.add-button{:type => "submit", :value => "Add Task", "ng-click" => "addTask(list)"}
+  %div{"ng-controller" => "TasksCtrl"}
+    %ul.todo-content{"ui-sortable" => "todoSortable", "ng-model" => "list.tasks"}
+      %li{"ng-repeat" => "task in list.tasks", "ng-include" => '"layouts/task.html"', "ng-class" => "{licheck: task.completed}", "class" =>  "li-task"}

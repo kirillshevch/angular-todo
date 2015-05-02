@@ -10,6 +10,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'haml-rails'
+gem 'devise', '~> 3.4'
+gem 'cancancan', '~> 1.10'
+gem 'angular_rails_csrf'
+gem 'omniauth-facebook'
+gem 'acts_as_list'
+gem 'carrierwave'
+gem 'angularjs-file-upload-rails', '~> 1.1.6'
 
 group :development, :test do
   gem 'byebug'
@@ -17,9 +24,12 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.2'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'faker'
+  gem 'shoulda-matchers'
 end
 
 gem 'rails_12factor', group: :production
