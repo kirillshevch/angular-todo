@@ -57,6 +57,8 @@ textarea {
   color: #ffffff;
   margin-left: 11px;
   float: left;
+  max-width: 490px;
+  word-wrap: break-word;
 }
 
 .todo-list-name p {

@@ -5,15 +5,15 @@ angular.module('todoApp').controller('SessionsCtrl', ['$scope', 'Auth', '$locati
 
     $scope.logout = ->
       Auth.logout().then ((oldUser) ->
-        $scope.user = undefined
-
+        $rootScope.user = undefined
+        $rootScope.lists = undefined
         $location.path '/sign_in'
       ), (error) ->
 
     $scope.signinData = {}
     $scope.signIn = ->
       Auth.login($scope.signinData).then ((user) ->
-        $scope.user = user
+        $rootScope.user = user
         List.index '',
           (response)->
             $rootScope.lists = response

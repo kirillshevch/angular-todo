@@ -1,5 +1,5 @@
-angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'FileUploader',
-  ($scope, Comment, FileUploader)->
+angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'FileUploader', '$rootScope',
+  ($scope, Comment, FileUploader, $rootScope)->
 
     $scope.addComment = (task)->
       Comment.create
@@ -15,8 +15,6 @@ angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'File
 
     $scope.uploader = new FileUploader(
       url: 'file_stores'
-      headers:
-        'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')
     )
 
     $scope.uploader.onBeforeUploadItem = (item) ->

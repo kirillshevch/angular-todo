@@ -6,6 +6,8 @@ class List < ActiveRecord::Base
 
   default_scope -> { order('id DESC') }
 
+  validates :name, length: { maximum: 500 }
+
   private
 
     def default_name

@@ -9,12 +9,16 @@ class Api::CommentsController < ApplicationController
 
     if @comment.save
       render json: @comment
+    else
+      render json: @comment.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
     if @comment.destroy
       render nothing: true
+    else
+      render json: @comment.errors, status: :unprocessable_entity
     end
   end
 
