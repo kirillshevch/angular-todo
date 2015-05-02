@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  load_resource only: [:destroy, :update]
+  load_and_authorize_resource only: [:destroy]
 
   def create
     @list = List.find(params[:list_id])
@@ -14,12 +14,6 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     if @comment.destroy
-      render nothing: true
-    end
-  end
-
-  def update
-    if @comment.update(comment_params)
       render nothing: true
     end
   end

@@ -29,6 +29,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'faker'
+  gem 'shoulda-matchers'
 end
 
 gem 'rails_12factor', group: :production

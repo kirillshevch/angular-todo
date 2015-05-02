@@ -6,6 +6,7 @@ angular.module('todoApp').controller('SessionsCtrl', ['$scope', 'Auth', '$locati
     $scope.logout = ->
       Auth.logout().then ((oldUser) ->
         $scope.user = undefined
+
         $location.path '/sign_in'
       ), (error) ->
 

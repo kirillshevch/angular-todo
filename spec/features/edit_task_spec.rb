@@ -34,4 +34,8 @@ feature 'Edit task', js: true do
 
     expect(page).to have_content 'Due date:'
   end
+
+  scenario 'User mark a task as completed' do
+    #todo
+  end
 end

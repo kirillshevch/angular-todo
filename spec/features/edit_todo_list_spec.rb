@@ -21,9 +21,4 @@ feature 'Edit todo list', js: true do
     # todo
   end
 
-  scenario 'User delete list successfully' do
-    find('.glyphicon-trash').click
-
-    expect(page).not_to have_content('New list')
-  end
 end

@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :comment do
-    name "MyString"
-task_id 1
+    name "New comment"
   end
-
 end

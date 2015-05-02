@@ -4,21 +4,19 @@ angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'File
     $scope.addComment = (task)->
       Comment.create
         list_id: task.list_id, task_id: task.id, name: task.commentNewName
-          , (response)->
-              $scope.task.comments.unshift(response)
-              $scope.task.commentNewName = ''
+      , (response)->
+        $scope.task.comments.unshift(response)
+        $scope.task.commentNewName = ''
     $scope.deleteComment = (task, comment)->
       Comment.delete
         list_id: task.list_id, task_id: task.id, id: comment.id
-          , ->
-            $scope.task.comments.splice($scope.task.comments.indexOf(comment), 1)
-
-    #csrf_token = document.querySelector("meta[name=\"csrf-token\"]").getAttribute("content")
+      , ->
+        $scope.task.comments.splice($scope.task.comments.indexOf(comment), 1)
 
     $scope.uploader = new FileUploader(
       url: 'file_stores'
-      #headers:
-        #'X-CSRF-TOKEN': csrf_token
+      headers:
+        'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')
     )
 
     $scope.uploader.onBeforeUploadItem = (item) ->
