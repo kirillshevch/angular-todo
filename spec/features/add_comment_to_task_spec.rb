@@ -23,6 +23,14 @@ feature 'Add comment', js: true do
   end
 
   scenario 'User cannot add comment with invalid data' do
-    #todo
+    find('.li-task').hover
+    within('.task-change') do
+      find('.glyphicon-comment').click
+    end
+
+    fill_in 'Start typing here to create a comment...', with: ''
+    find('.comment-add').click
+
+    expect(page).to have_content 'Comment can\'t be blank'
   end
 end

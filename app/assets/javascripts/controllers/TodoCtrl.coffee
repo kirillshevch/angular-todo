@@ -1,12 +1,11 @@
-angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope', 'List',
-  (Auth, $location, $scope, List)->
+angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope', 'List', 'ngToast',
+  (Auth, $location, $scope, List, ngToast)->
     if (Auth._currentUser == null)
       $location.path('/sign_up')
 
     $scope.addList = ->
-      List.create '',
-        (response)->
-          $scope.lists.unshift(response)
+      List.create '', (response)->
+        $scope.lists.unshift(response)
 
     $scope.deleteList = (list)->
       List.delete
@@ -22,10 +21,18 @@ angular.module('todoApp').controller('TodoCtrl', ['Auth', '$location', '$scope',
         list.nameFeature = list.name
 
     $scope.updateList = (list)->
-      List.update
-        id: list.id, name: list.nameFeature
-          , ->
-            list.name = list.nameFeature
-            list.edit = false
-
+      if list.nameFeature != undefined
+        List.update
+          id: list.id, name: list.nameFeature
+            , ->
+              list.name = list.nameFeature
+              list.edit = false
+          , (error)->
+            ngToast.create
+              className: 'danger'
+              content: 'Task ' + error.data.name
+      else
+        ngToast.create
+          className: 'danger'
+          content: 'List name can\'t be blank'
 ])

@@ -3,7 +3,7 @@ include OmniauthHelper
 
 feature 'Authentication', js: true do
 
-  given!(:user) { FactoryGirl.create(:user, email: "kirill@gmail.com", password: "12345678") }
+  given!(:user) { FactoryGirl.create(:user, email: 'kirill@gmail.com', password: '12345678') }
 
   scenario 'Visitor login successfully via sign in form' do
     visit '#/sign_in'

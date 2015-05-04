@@ -10,6 +10,6 @@
     "normalize.css": "latest",
     "angular-ui-date": "latest",
     "angular-ui-sortable": "latest",
-    "ng-alertify": "latest"
+    "ngtoast": "latest"
   }
 }

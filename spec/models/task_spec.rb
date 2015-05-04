@@ -15,10 +15,16 @@ RSpec.describe Task, type: :model do
 
   context '.task_priority=' do
     let(:list) { FactoryGirl.create(:list) }
-    let!(:task1) { FactoryGirl.create(:task, list_id: list) }
-    let!(:task2) { FactoryGirl.create(:task, list_id: list) }
     let!(:task3) { FactoryGirl.create(:task, list_id: list) }
+    let!(:task2) { FactoryGirl.create(:task, list_id: list) }
+    let!(:task1) { FactoryGirl.create(:task, list_id: list) }
 
-    #todo
+    it 'should reorder other tasks in the list when target_priority is set' do
+      expect {
+        task2.task_priority = 1
+        task2.save!
+      }.to change {[task1, task2, task3].map(&:reload).map(&:position)}.from([1, 2, 3]).to([2, 1, 3])
+    end
+
   end
 end

@@ -21,7 +21,8 @@
 //= require angular-resource/angular-resource
 //= require angular-ui-date/src/date
 //= require angular-ui-sortable/sortable
-//= require ng-alertify/ng-alertify
 //= require angularjs-file-upload
+//= require ngtoast/dist/ngToast.js
+//= require angular-sanitize/angular-sanitize
 //= require_tree .
 //= require_tree ./templates

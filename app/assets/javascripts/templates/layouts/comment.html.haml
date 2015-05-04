@@ -2,7 +2,7 @@
   {{ comment.name }}
   %a.glyphicon.glyphicon-trash.delete-comment{"ng-click" => "deleteComment(task, comment)"}
   %a.glyphicon.glyphicon-paperclip.delete-comment{"ng-click" => "fileSelectShow(task, comment)"}
-  %input{"nv-file-select" => "", :type => "file", :uploader => "uploader", "options" => "{ formData: [{id: comment.id}] }", "ng-show" => "comment.fileSelect"}
+  %input{"nv-file-select" => "", :type => "file", :uploader => "uploader", "options" => "{ formData: [{id: comment.id}] }", "ng-show" => "comment.fileSelect", "placeholder" => "file-input"}
   %ul{"ng-show" => "comment.fileSelect"}
     %li{"ng-repeat" => "item in uploader.queue"}
       Name:

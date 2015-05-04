@@ -1,12 +1,18 @@
-angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'FileUploader', '$rootScope',
-  ($scope, Comment, FileUploader, $rootScope)->
+angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'FileUploader', '$rootScope', 'ngToast',
+  ($scope, Comment, FileUploader, $rootScope, ngToast)->
 
     $scope.addComment = (task)->
-      Comment.create
-        list_id: task.list_id, task_id: task.id, name: task.commentNewName
-      , (response)->
-        $scope.task.comments.unshift(response)
-        $scope.task.commentNewName = ''
+      if task.commentNewName != undefined
+        Comment.create
+          list_id: task.list_id, task_id: task.id, name: task.commentNewName
+        , (response)->
+          $scope.task.comments.unshift(response)
+          $scope.task.commentNewName = undefined
+      else
+        ngToast.create
+          className: 'danger'
+          content: 'Comment can\'t be blank'
+
     $scope.deleteComment = (task, comment)->
       Comment.delete
         list_id: task.list_id, task_id: task.id, id: comment.id
@@ -29,6 +35,11 @@ angular.module('todoApp').controller 'CommentsCtrl', ['$scope', 'Comment', 'File
             comment.file_stores = new Array(response)
           else
             comment.file_stores.push(response)
+
+    $scope.uploader.onErrorItem = (item, response, status, headers)->
+      ngToast.create
+        className: 'danger'
+        content: 'File ' + response.file
 
     $scope.fileSelectShow = (task, comment)->
       id = comment.id

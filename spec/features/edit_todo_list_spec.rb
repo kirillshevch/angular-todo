@@ -18,7 +18,11 @@ feature 'Edit todo list', js: true do
   end
 
   scenario 'User can not set empty name list' do
-    # todo
+    find('.glyphicon-edit').click
+    find('.form-edit').set('')
+    find('.glyphicon-ok').click
+
+    expect(page).to have_content 'List name can\'t be blank'
   end
 
 end

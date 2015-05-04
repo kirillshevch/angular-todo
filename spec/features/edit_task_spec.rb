@@ -23,6 +23,18 @@ feature 'Edit task', js: true do
   end
 
 
+  scenario 'User cannot set empty task name' do
+    find('.li-task').hover
+    within('.task-change') do
+      find('.glyphicon-edit').click
+    end
+
+    find('.form-edit-task').set('')
+    find('.glyphicon-ok').click
+
+    expect(page).to have_content 'Task can\'t be blank'
+  end
+
   scenario 'User set due date' do
     find('.li-task').hover
     within('.task-change') do
@@ -35,7 +47,4 @@ feature 'Edit task', js: true do
     expect(page).to have_content 'Due date:'
   end
 
-  scenario 'User mark a task as completed' do
-    #todo
-  end
 end
