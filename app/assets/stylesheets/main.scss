@@ -415,6 +415,10 @@ textarea {
   margin-left: 25px;
 }
 
+.files p {
+  text-decoration: none !important;
+}
+
 .file {
   margin-left: 25px;
 }
@@ -433,8 +437,4 @@ footer {
 
 .loading-spiner img {
   width: 37px;
-}
-
-.attach-files {
-  text-decoration: none !important;
 }
