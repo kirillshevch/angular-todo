@@ -14,7 +14,7 @@
         %h4 FROM RUBY GARAGE
       %div{"ng-controller" => "SessionsCtrl", "class" => "sign-out", "ng-show" => "user"}
         %button{"ng-click" => "logout()", "class" => "btn btn-primary"} Sign out
-    .container
+    .container{"ng-show" => "showContent"}
       %div{"ng-view" => ""}
     %footer
       %p &copy; Ruby Garage
