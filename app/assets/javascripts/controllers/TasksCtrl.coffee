@@ -7,7 +7,7 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task', 'ngToast',
             , (response)->
                 if $scope.list.tasks == undefined
                   $scope.list.tasks = new Array(response)
-                  $scope.list.newTaskName = undefined
+                  $scope.list.newTaskName = ''
                 else
                   $scope.list.tasks.unshift(response)
                   $scope.list.newTaskName = undefined
