@@ -17,7 +17,6 @@ gem 'omniauth-facebook'
 gem 'acts_as_list'
 gem 'carrierwave'
 gem 'angularjs-file-upload-rails', '~> 1.1.6'
-gem 'json_spec'
 
 group :development, :test do
   gem 'byebug'

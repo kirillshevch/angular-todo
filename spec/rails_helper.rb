@@ -14,7 +14,6 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
   config.include Rails.application.routes.url_helpers
-  config.include JsonSpec::Helpers
 
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation

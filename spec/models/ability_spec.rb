@@ -16,8 +16,15 @@ describe 'User' do
     it { expect(ability).to be_able_to(:destroy, comment) }
     it { expect(ability).to be_able_to(:create, file) }
 
-    it { expect(ability).not_to be_able_to(:manage, List.new) }
+    context 'cannot' do
+      let(:user1) { FactoryGirl.create(:user) }
+      subject(:ability) { Ability.new(user1) }
 
-    # todo
+      it { expect(ability).not_to be_able_to(:manage, list) }
+      it { expect(ability).not_to be_able_to(:manage, task) }
+      it { expect(ability).not_to be_able_to(:create, comment) }
+      it { expect(ability).not_to be_able_to(:destroy, comment) }
+      it { expect(ability).not_to be_able_to(:create, file) }
+    end
   end
 end
