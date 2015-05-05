@@ -6,5 +6,10 @@ app = angular.module 'todoApp',
    'ngResource',
    'ui.date',
    'ui.sortable',
-   'angularFileUpload'
+   'angularFileUpload',
+   'ngToast'
   ]
+
+app.config ["ngToastProvider", (ngToastProvider) ->
+  ngToastProvider.configure verticalPosition: 'bottom'
+]

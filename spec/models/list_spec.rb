@@ -8,6 +8,12 @@ RSpec.describe List, type: :model do
     it { expect(list).to have_many(:tasks) }
   end
 
+  context 'validations' do
+    let(:list) { FactoryGirl.create(:list) }
+
+    it { expect(list).to validate_length_of(:name).is_at_most(500) }
+  end
+
   context '.default_name' do
     context 'with default name' do
       let(:list) { List.new }

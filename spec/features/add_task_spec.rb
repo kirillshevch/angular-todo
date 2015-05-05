@@ -16,7 +16,9 @@ feature 'Add task', js: true do
   end
 
   scenario 'User cannot add task with invalid data' do
-    #todo
+    fill_in 'Start typing here to create a task...', with: ''
+    click_button 'Add Task'
+    expect(page).to have_content 'Task can\'t be blank'
   end
 
 end

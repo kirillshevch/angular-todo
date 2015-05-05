@@ -1,16 +1,24 @@
-angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
-  ($scope, Task)->
+angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task', 'ngToast',
+  ($scope, Task, ngToast)->
     $scope.addTask = (list)->
-      Task.create
-        list_id: list.id, name: list.newTaskName
-          , (response)->
-              if $scope.list.tasks == undefined
-                $scope.list.tasks = new Array(response)
-                $scope.list.newTaskName = ''
-              else
-                $scope.list.tasks.unshift(response)
-                $scope.list.newTaskName = ''
-
+      if list.newTaskName != undefined
+        Task.create
+          list_id: list.id, name: list.newTaskName
+            , (response)->
+                if $scope.list.tasks == undefined
+                  $scope.list.tasks = new Array(response)
+                  $scope.list.newTaskName = undefined
+                else
+                  $scope.list.tasks.unshift(response)
+                  $scope.list.newTaskName = undefined
+            , (error)->
+              ngToast.create
+                className: 'danger'
+                content: 'Task ' + error.data.name
+      else
+        ngToast.create
+          className: 'danger'
+          content: 'Task can\'t be blank'
 
     $scope.deleteTask = (list, task)->
       Task.delete
@@ -24,12 +32,20 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task',
       task.edit = !task.edit
 
     $scope.updateTask = (list, task)->
-      Task.update
-        list_id: list.id, id: task.id, name: task.newName
-          , ->
-            task.name = task.newName
-            task.edit = false
-
+      if task.newName.length > 0
+        Task.update
+          list_id: list.id, id: task.id, name: task.newName
+            , ->
+              task.name = task.newName
+              task.edit = false
+            , (error)->
+              ngToast.create
+                className: 'danger'
+                content: 'Task ' + error.data.name
+      else
+        ngToast.create
+          className: 'danger'
+          content: 'Task can\'t be blank'
 
     $scope.taskCompleted = (list, task)->
       Task.update

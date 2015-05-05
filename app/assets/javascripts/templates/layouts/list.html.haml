@@ -6,7 +6,7 @@
       %p{"ng-hide" => "list.edit"} {{ list.name }}
       %form{"ng-show" => "list.edit", "ng-submit" => "updateList(list)"}
         %div
-          %input.form-edit{:name => "name", :type => "text", "ng-model" => "list.nameFeature", :required => true}
+          %input.form-edit{:name => "name", :type => "text", "ng-model" => "list.nameFeature", :required => true, "ng-maxlength" => 500}
     .icon-right{"ng-show" => "list.edit"}
       %a.glyphicon.glyphicon-ok{"ng-click" => "updateList(list)"}
       .horisont
@@ -23,7 +23,7 @@
     %form
       .form-group
         .input-group
-          %input.form-control{:placeholder => "Start typing here to create a task...", :type => "text", "ng-model" => "list.newTaskName", :required => true}
+          %input.form-control{:placeholder => "Start typing here to create a task...", :type => "text", "ng-model" => "list.newTaskName", :required => true, "ng-maxlength" => 500}
           .input-group-addon
             %input.add-button{:type => "submit", :value => "Add Task", "ng-click" => "addTask(list)"}
   %div{"ng-controller" => "TasksCtrl"}

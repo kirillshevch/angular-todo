@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20150426055408) do
     t.integer  "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "file"
-    t.json     "files"
   end
 
   create_table "file_stores", force: :cascade do |t|
@@ -34,13 +32,6 @@ ActiveRecord::Schema.define(version: 20150426055408) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
