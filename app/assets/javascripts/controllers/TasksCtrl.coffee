@@ -32,7 +32,7 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task', 'ngToast',
       task.edit = !task.edit
 
     $scope.updateTask = (list, task)->
-      if task.newName.length > 0
+      if task.newName != undefined
         Task.update
           list_id: list.id, id: task.id, name: task.newName
             , ->
