@@ -6,6 +6,9 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body{"ng-app" => "todoApp", "ng-controller" => "MainCtrl"}
+    .loading-spiner-holder{"data-loading" => ""}
+      .loading-spiner
+        %img{:src => "http://ipic.su/img/img7/fs/712.1430834220.gif"}/
     %toast
     %header
       .content-header
