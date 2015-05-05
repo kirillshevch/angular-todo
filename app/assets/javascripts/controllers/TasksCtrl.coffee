@@ -7,10 +7,10 @@ angular.module('todoApp').controller 'TasksCtrl', ['$scope', 'Task', 'ngToast',
             , (response)->
                 if $scope.list.tasks == undefined
                   $scope.list.tasks = new Array(response)
-                  $scope.list.newTaskName = ''
+                  $scope.list.newTaskName = undefined
                 else
                   $scope.list.tasks.unshift(response)
-                  $scope.list.newTaskName = ''
+                  $scope.list.newTaskName = undefined
             , (error)->
               ngToast.create
                 className: 'danger'

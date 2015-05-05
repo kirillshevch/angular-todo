@@ -18,6 +18,15 @@
   width: 349px;
 }
 
+.sign-in-last-inp {
+  margin-bottom: 5px !important;
+}
+
+.sign-in-body {
+  height: 167px;
+  width: 349px;
+}
+
 .sign-with-fb {
   margin-left: 15px;
   width: 20px;
@@ -43,4 +52,10 @@
   background:     -ms-linear-gradient(top, #5587bf, #3863a0);
   background:      -o-linear-gradient(top, #5587bf, #3863a0);
   box-shadow: 0 1px 0 #91aed5 inset;
+}
+
+.remember-me {
+  margin-bottom: 13px;
+  font-weight: 100;
+  color: #ffffff;
 }

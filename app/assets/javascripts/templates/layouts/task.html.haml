@@ -4,14 +4,14 @@
   %p{"ng-hide" => "task.edit"} {{ task.name }}
   %form{"ng-show" => "task.edit"}
     %div
-      %input.form-edit.form-edit-task{:type => "text", "ng-model" => "task.newName"}
+      %input.form-edit.form-edit-task{:type => "text", "ng-model" => "task.newName", "ng-maxlength" => 500, :required => true}
       %button.glyphicon.glyphicon-ok.button-ok{"ng-click" => "updateTask(list, task)"}
       %input.glyphicon.glyphicon-time.button-ok{"type" => "button", "ui-date" => "dateOptions", "ng-model" => "task.due_date", "ui-date-format" => "yy-mm-dd", "ng-change" => "taskDate(list, task)"}
   %p{"ng-show" => "task.due_date"} Due date: {{task.due_date}}
   .comments{"ng-show" => "task.comments.show", "ng-controller" => "CommentsCtrl"}
     %form{"ng-submit" => "addComment(task)"}
       %a.glyphicon.glyphicon-plus.comment-add{"ng-click" => "addComment(task)"}
-      %input.comment-input{"placeholder" => "Start typing here to create a comment...", "ng-model" =>  "task.commentNewName"}
+      %input.comment-input{"placeholder" => "Start typing here to create a comment...", "ng-model" =>  "task.commentNewName", "ng-maxlength" => 500}
     .comments-list{"ng-repeat" => "comment in task.comments", "ng-include" => '"layouts/comment.html"'}
 .task-change
   %a.glyphicon.glyphicon-comment{"ng-click" => "commentsShow(task)"}
